@@ -44,7 +44,7 @@ Returnerer alle forestillinger samt antal ledige pladser.
 
 ---
 
-## POST – Opret reservation
+##POST – Opret reservation
 POST /reservations
 
 Eksempel på request body:
@@ -79,7 +79,7 @@ Databasen initialiseres ved opstart via en simpel seeder, som indsætter de fast
 - Forretningsfejl håndteres i service-laget
 - API-fejl returneres i JSON-format
 
-## Test af API
+##Test af API
 API'et er blevet testet ved brug af Postman app
 
 Eksempel (GET):
