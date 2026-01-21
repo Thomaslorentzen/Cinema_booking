@@ -35,7 +35,7 @@ Der findes **ingen GUI** – løsningen er udelukkende backend.
 Base URL: http://localhost:8080/cinema-booking/api/v1
 
 
-### GET – Hent forestillinger
+## GET – Hent forestillinger
 GET /performances
 
 
@@ -44,7 +44,7 @@ Returnerer alle forestillinger samt antal ledige pladser.
 
 ---
 
-### POST – Opret reservation
+## POST – Opret reservation
 POST /reservations
 
 Eksempel på request body:
@@ -74,12 +74,12 @@ Relationen er en én-til-mange-relation fra Performance til Reservation.
 
 Databasen initialiseres ved opstart via en simpel seeder, som indsætter de faste forestillinger, hvis databasen er tom.
 
-###Validering og fejlhåndtering
+##Validering og fejlhåndtering
 - Input valideres via Jakarta Bean Validation
 - Forretningsfejl håndteres i service-laget
 - API-fejl returneres i JSON-format
 
-###Test af API
+## Test af API
 API'et er blevet testet ved brug af Postman app
 
 Eksempel (GET):
