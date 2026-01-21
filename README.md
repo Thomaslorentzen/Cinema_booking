@@ -44,7 +44,7 @@ Returnerer alle forestillinger samt antal ledige pladser.
 
 ---
 
-##POST – Opret reservation
+## POST – Opret reservation
 POST /reservations
 
 Eksempel på request body:
@@ -55,7 +55,7 @@ Eksempel på request body:
 }
 ```
 
-##DELETE – Aflys reservation
+## DELETE – Aflys reservation
 
 DELETE /reservations/{id}
 API-dokumentation (OpenAPI 3)
@@ -74,12 +74,12 @@ Relationen er en én-til-mange-relation fra Performance til Reservation.
 
 Databasen initialiseres ved opstart via en simpel seeder, som indsætter de faste forestillinger, hvis databasen er tom.
 
-##Validering og fejlhåndtering
+## Validering og fejlhåndtering
 - Input valideres via Jakarta Bean Validation
 - Forretningsfejl håndteres i service-laget
 - API-fejl returneres i JSON-format
 
-##Test af API
+## Test af API
 API'et er blevet testet ved brug af Postman app
 
 Eksempel (GET):
@@ -97,7 +97,7 @@ Content-Type: application/json
 }
 ```
 
-##FOR AT KØRE PROJEKTET LOKALT
+## FOR AT KØRE PROJEKTET LOKALT
 
 Forudsætninger:
 - Java 21
