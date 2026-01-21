@@ -47,20 +47,16 @@ Returnerer alle forestillinger samt antal ledige pladser.
 ### POST – Opret reservation
 POST /reservations
 
-
-
 Eksempel på request body:
 ```json
 {
   "performanceID": 1,
   "numberOfSeats": 3
 }
+```
 
 DELETE – Aflys reservation
 
 DELETE /reservations/{id}
 API-dokumentation (OpenAPI 3)
-OpenAPI-specifikationen er tilgængelig via:
 
-
-/v3/api-docs
