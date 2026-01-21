@@ -38,8 +38,7 @@ Base URL: http://localhost:8080/cinema-booking/api/v1
 ### GET – Hent forestillinger
 GET /performances
 
-yaml
-Kopier kode
+
 
 Returnerer alle forestillinger samt antal ledige pladser.
 
@@ -48,8 +47,7 @@ Returnerer alle forestillinger samt antal ledige pladser.
 ### POST – Opret reservation
 POST /reservations
 
-css
-Kopier kode
+
 
 Eksempel på request body:
 ```json
@@ -57,9 +55,9 @@ Eksempel på request body:
   "performanceID": 1,
   "numberOfSeats": 3
 }
+
 DELETE – Aflys reservation
-bash
-Kopier kode
+
 DELETE /reservations/{id}
 API-dokumentation (OpenAPI 3)
 OpenAPI-specifikationen er tilgængelig via:
