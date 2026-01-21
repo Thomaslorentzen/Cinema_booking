@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Cinema Booking API
+  description: REST API for booking seats for cinema performances
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /performances:
+    get:
+      summary: Get all performances with available seats
+      operationId: getPerformances
+      responses:
+        '200':
+          description: List of performances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PerformanceResponse'
+
+  /reservations:
+    post:
+      summary: Create a new reservation
+      operationId: createReservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReservationRequest'
+      responses:
+        '201':
+          description: Reservation created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReservationResponse'
+        '400':
+          description: Validation error
+        '409':
+          description: Not enough available seats
+
+  /reservations/{id}:
+    delete:
+      summary: Cancel a reservation
+      operationId: cancelReservation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Reservation cancelled
+        '404':
+          description: Reservation not found
+
+components:
+  schemas:
+    PerformanceResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: "Inception"
+        showTime:
+          type: string
+          format: date-time
+          example: "2026-01-20T19:30:00"
+        availableSeats:
+          type: integer
+          example: 42
+
+    CreateReservationRequest:
+      type: object
+      required:
+        - performanceId
+        - numberOfSeats
+      properties:
+        performanceId:
+          type: integer
+          example: 1
+        numberOfSeats:
+          type: integer
+          minimum: 1
+          maximum: 50
+          example: 2
+
+    ReservationResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 10
+        performanceId:
+          type: integer
+          example: 1
+        numberOfSeats:
+          type: integer
+          example: 2
+        createdAt:
+          type: string
+          format: date-time
