@@ -62,6 +62,5 @@ DELETE /reservations/{id}
 API-dokumentation (OpenAPI 3)
 OpenAPI-specifikationen er tilgængelig via:
 
-bash
-Kopier kode
+
 /v3/api-docs
