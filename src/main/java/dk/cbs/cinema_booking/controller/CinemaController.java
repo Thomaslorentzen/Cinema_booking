@@ -39,20 +39,12 @@ public class CinemaController {
 
     
     @PostMapping("/reservations")
-    public ResponseEntity<SuccessPayload<ReservationResponseDTO>> createReservation(
-            @Valid @RequestBody ReservationRequestDTO request) {
+    public ResponseEntity<Void> createReservation(
+        @Valid @RequestBody ReservationRequestDTO request) {
 
-        cinemaService.createReservation(request);
-
-        ReservationResponseDTO response =
-                new ReservationResponseDTO(null); // ID kan udvides senere
-
-        SuccessPayload<ReservationResponseDTO> payload =
-                new SuccessPayload<>("Reservation", List.of(response));
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(payload);
-    }
-    
+    cinemaService.createReservation(request);
+    return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
     
     @DeleteMapping("/reservations/{id}")
     public ResponseEntity<Void> cancelReservation(@PathVariable Long id) {
